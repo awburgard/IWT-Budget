@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Calc.css';
 
 class Calc extends Component {
   constructor(props){
@@ -46,7 +47,7 @@ class Calc extends Component {
         </div>
         <h3>Percentage Breakdown</h3>
         <input onChange={this.handleIncomeChange('totalIncome')}/>
-        <button onClick={this.totalIncomeBreakdown}>Click</button>
+        <button className="button" onClick={this.totalIncomeBreakdown}>Click</button>
         <p>Total Monthly Income: {this.state.totalIncome}</p>
         <p>Total Fixed Costs: {this.state.monthlyFixedCost}</p>
         <p>Total Investments: {this.state.investmentCost}</p>

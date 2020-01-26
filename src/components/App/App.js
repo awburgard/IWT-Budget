@@ -8,7 +8,9 @@ function App() {
   const currentMonth = months[date.getMonth()];
   return (
     <div className="App">
-      <Calc currentMonth={currentMonth}/>
+      <div className="App-header">
+        <Calc currentMonth={currentMonth} />
+      </div>
     </div>
   );
 }
