@@ -20,13 +20,6 @@ class Calc extends Component {
     let guiltFreeSpending = this.state.totalIncome * guiltFreeSpendingPer;
 
     this.setState({
-      monthlyFixedCost:  monthlyFixedCost,
-      investmentCost: investmentCost,
-      savingsCost: savingsCost,
-      guiltFreeSpending: guiltFreeSpending,
-    });
-
-    return({
       monthlyFixedCost,
       investmentCost,
       savingsCost,
@@ -38,13 +31,14 @@ class Calc extends Component {
     this.setState({
       [totalIncome]: event.target.value
     })
+    console.log(totalIncome)
   }
 
   render() {
     return (
       <div>
         <h1>Percentage Breakdown</h1>
-        <input onChange={this.handleIncomeChange}/>
+        <input onChange={this.handleIncomeChange('totalIncome')}/>
         <button onClick={this.totalIncomeBreakdown}>Click</button>
         <p>Total Income: {this.state.totalIncome}</p>
         <p>Total Monthly Fixed Costs: {this.state.monthlyFixedCost}</p>
