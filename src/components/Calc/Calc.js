@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 
 class Calc extends Component {
-  state = {
-    totalIncome: 0,
-    monthlyFixedCost: 0,
-    investmentCost: 0,
-    savingsCost: 0,
-    guiltFreeSpending: 0
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      totalIncome: 0,
+      monthlyFixedCost: 0,
+      investmentCost: 0,
+      savingsCost: 0,
+      guiltFreeSpending: 0,
+      date: this.props.currentMonth 
+    };
+  }
+  
 
   totalIncomeBreakdown = () => {
     const monthlyFixedCostsPer = 0.6;
@@ -31,17 +36,19 @@ class Calc extends Component {
     this.setState({
       [totalIncome]: event.target.value
     })
-    console.log(totalIncome)
   }
 
   render() {
     return (
       <div>
-        <h1>Percentage Breakdown</h1>
+        <div>
+          <h1>{this.state.date}</h1>
+        </div>
+        <h3>Percentage Breakdown</h3>
         <input onChange={this.handleIncomeChange('totalIncome')}/>
         <button onClick={this.totalIncomeBreakdown}>Click</button>
-        <p>Total Income: {this.state.totalIncome}</p>
-        <p>Total Monthly Fixed Costs: {this.state.monthlyFixedCost}</p>
+        <p>Total Monthly Income: {this.state.totalIncome}</p>
+        <p>Total Fixed Costs: {this.state.monthlyFixedCost}</p>
         <p>Total Investments: {this.state.investmentCost}</p>
         <p>Total Savings: {this.state.savingsCost}</p>
         <p>Guilt Free Spending: {this.state.guiltFreeSpending}</p>
