@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import './Calc.css';
+import "./Calc.css";
+import CurrentMonth from "../CurrentMonth/CurrentMonth";
 
 class Calc extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       totalIncome: 0,
@@ -10,10 +11,10 @@ class Calc extends Component {
       investmentCost: 0,
       savingsCost: 0,
       guiltFreeSpending: 0,
-      date: this.props.currentMonth 
+      transactions: 0,
+      date: <CurrentMonth />
     };
   }
-  
 
   totalIncomeBreakdown = () => {
     const monthlyFixedCostsPer = 0.6;
@@ -29,30 +30,33 @@ class Calc extends Component {
       monthlyFixedCost,
       investmentCost,
       savingsCost,
-      guiltFreeSpending,
+      guiltFreeSpending
     });
   };
 
-  handleIncomeChange = totalIncome => (event) => {
+  handleChange = property => event => {
     this.setState({
-      [totalIncome]: event.target.value
-    })
-  }
+      [property]: event.target.value
+    });
+  };
 
   render() {
     return (
       <div>
-        <div>
-          <h1>{this.state.date}</h1>
-        </div>
+        <div>{this.state.date}</div>
         <h3>Percentage Breakdown</h3>
-        <input onChange={this.handleIncomeChange('totalIncome')}/>
-        <button className="button" onClick={this.totalIncomeBreakdown}>Click</button>
+        <input onChange={this.handleChange("totalIncome")} />
+        <button className="button" onClick={this.totalIncomeBreakdown}>
+          Click
+        </button>
         <p>Total Monthly Income: {this.state.totalIncome}</p>
         <p>Total Fixed Costs: {this.state.monthlyFixedCost}</p>
         <p>Total Investments: {this.state.investmentCost}</p>
         <p>Total Savings: {this.state.savingsCost}</p>
         <p>Guilt Free Spending: {this.state.guiltFreeSpending}</p>
+        <p>Transactions: {this.state.transactions}</p>
+        <input onChange={this.handleChange("transactions")}></input>
+        <button>Add</button>
       </div>
     );
   }
