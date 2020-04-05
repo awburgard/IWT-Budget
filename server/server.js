@@ -10,4 +10,8 @@ app.use(bodyParser.json());
 
 app.use(express.static('build'));
 
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+})
+
 app.listen(port, () => { console.log (`Listening on localhost: ${port}`)});
