@@ -1,7 +1,7 @@
 import React from "react";
 
 function CurrentMonth() {
-  let months = [
+  const months = [
     "January",
     "February",
     "March",
@@ -17,10 +17,10 @@ function CurrentMonth() {
   ];
   const date = new Date();
   const currentMonth = months[date.getMonth()];
-  return(
-     <div>
-         <h1>{currentMonth}</h1>
-     </div>
+  return (
+    <>
+      {currentMonth}
+    </>
   )
 }
 
