@@ -5,23 +5,25 @@ export default class TransactionsProvider extends Component {
     state = {
         transactions: [
             {
-                cost: 0,
-                name: 'bread',
+                cost: 100,
+                place: 'costco',
             }
         ]
     }
 
-    addTransaction = ({ name, cost }) => {
-        this.state.transactions.push({ name, cost })
+    addTransaction = ({ cost, place }) => {
+        console.log(cost)
+        console.log(place)
         this.setState({
-            ...this.state,
+            transactions: [...this.state.transactions, { cost, place }]
         })
-        console.log(this.state)
     }
 
     handleChange = property => event => {
-        const transaction = { [property]: event.target.value }
-        return this.addTransaction(transaction)
+        console.log(property)
+        this.setState({
+            transactions:[...this.state.transactions, { [property]: event.target.value }]
+        })
     };
 
 
