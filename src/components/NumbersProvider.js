@@ -13,8 +13,6 @@ class NumbersProvider extends Component {
     date: <CurrentMonth />
   };
 
-
-
   totalIncomeBreakdown = () => {
     const monthlyFixedCostsPer = 0.6;
     const investmentPer = 0.05;

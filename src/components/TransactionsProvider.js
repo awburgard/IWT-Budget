@@ -12,27 +12,18 @@ export default class TransactionsProvider extends Component {
     }
 
     addTransaction = ({ cost, place }) => {
-        console.log(cost)
-        console.log(place)
         this.setState({
             transactions: [...this.state.transactions, { cost, place }]
+        }, () => {
+            console.log(this.state.transactions)
         })
     }
-
-    handleChange = property => event => {
-        console.log(property)
-        this.setState({
-            transactions:[...this.state.transactions, { [property]: event.target.value }]
-        })
-    };
-
 
     render() {
         return (
             <TransactionContext.Provider value={{
                 transactions: this.state,
                 addTransaction: this.addTransaction,
-                handleChange: this.handleChange
             }}>
                 {this.props.children}
             </TransactionContext.Provider>
