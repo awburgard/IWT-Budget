@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { NumbersContext } from './NumbersContext'
 import CurrentMonth from './CurrentMonth'
 
-
-
 class NumbersProvider extends Component {
   state = {
     totalIncome: 0,
