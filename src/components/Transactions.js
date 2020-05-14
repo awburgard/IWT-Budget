@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Button } from '@material-ui/core'
+import { Input, Button, List, ListItem } from '@material-ui/core'
 import { TransactionContext } from './TransactionsContext'
 
 export default class Transactions extends Component {
@@ -28,9 +28,15 @@ export default class Transactions extends Component {
                         <Input onChange={this.handleChange("cost")} placeholder='cost' />
                         <Input onChange={this.handleChange("place")} placeholder='place' />
                         <Button onClick={this.submitTransaction(context)}>Add</Button>
+                        {context.transactions.transactions.map((transaction) =>
+                            <List>
+                                <ListItem>
+                                    {transaction.place}: ${transaction.cost}
+                                </ListItem>
+                            </List>
+                        )}
                     </div>
                 )}
-
             </TransactionContext.Consumer>
         )
     }
