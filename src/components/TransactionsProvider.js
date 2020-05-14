@@ -14,8 +14,6 @@ export default class TransactionsProvider extends Component {
     addTransaction = ({ cost, place }) => {
         this.setState({
             transactions: [...this.state.transactions, { cost, place }]
-        }, () => {
-            console.log(this.state.transactions)
         })
     }
 
