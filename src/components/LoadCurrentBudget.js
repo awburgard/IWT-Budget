@@ -5,9 +5,8 @@ import { Typography } from '@material-ui/core'
 
 function LoadCurrentBudget() {
     const numbers = useContext(NumbersContext)
-    console.log(numbers)
     return (
-        <Typography>{numbers.budget.totalIncome}</Typography>
+        <Typography>Current Total Income for {numbers.budget.date}: {numbers.budget.totalIncome}</Typography>
     )
 }
 

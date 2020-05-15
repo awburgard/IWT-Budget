@@ -29,7 +29,7 @@ export default class Transactions extends Component {
                         <Input onChange={this.handleChange("place")} placeholder='place' />
                         <Button onClick={this.submitTransaction(context)}>Add</Button>
                         {context.transactions.transactions.map((transaction) =>
-                            <List>
+                            <List key={transaction.cost}>
                                 <ListItem>
                                     {transaction.place}: ${transaction.cost}
                                 </ListItem>

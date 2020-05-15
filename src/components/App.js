@@ -4,7 +4,7 @@ import NumbersProvider from './NumbersProvider';
 import { Container } from '@material-ui/core';
 import TransactionsProvider from './TransactionsProvider';
 import Transactions from './Transactions';
-import LoadCurrentBudget from './LoadCurrentBudget';
+import HandleBudgetChange from './HandleBudgetChange'
 
 function App() {
   return (
@@ -13,8 +13,7 @@ function App() {
         <Container>
           <Budget />
           <Transactions />
-          <h5>Current Budget</h5>
-          <LoadCurrentBudget />
+          <HandleBudgetChange />
         </Container>
       </NumbersProvider>
     </TransactionsProvider>
