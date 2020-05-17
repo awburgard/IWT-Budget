@@ -15,6 +15,7 @@ CREATE TABLE transactions (
 
 CREATE TABLE budget (
 	budgetId SERIAL PRIMARY KEY,
+    month DATE NOT NULL,
 	total_income INTEGER NOT NULL,
 	monthly_fixed_costs INTEGER NOT NULL,
 	investments INTEGER NOT NULL,

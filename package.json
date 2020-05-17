@@ -5,6 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^4.9.14",
     "@material-ui/icons": "^4.9.1",
+    "apollo-server-express": "^2.13.1",
+    "express": "^4.17.1",
+    "graphql": "^15.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0"
@@ -33,6 +36,6 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.4"
   }
 }
