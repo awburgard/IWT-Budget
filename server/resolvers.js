@@ -8,8 +8,17 @@ const resolvers = {
                 console.log(`error: ${e}`)
                 return []
             }
-        }
-    }
+        },
+        users: async () => {
+            try {
+                const allUsers = await User.find()
+                return allUsers
+            } catch (e) {
+                console.log(`error: ${e}`)
+                return []
+            }
+        },
+    } 
 }
 
 module.exports = {

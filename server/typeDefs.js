@@ -29,6 +29,7 @@ const typeDefs = gql`
 
     type Query {
         transactions: [Transaction]
+        users: [User]
     }
 `
 
