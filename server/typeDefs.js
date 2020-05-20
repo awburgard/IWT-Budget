@@ -1,4 +1,6 @@
-const typeDefs = `
+const { gql } = require('apollo-server-express');
+
+const typeDefs = gql`
     type Budget {
         id: ID!,
         totalIncome: Int!

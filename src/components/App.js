@@ -1,13 +1,12 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
-
 import Budget from './Budget'
 import NumbersProvider from './NumbersProvider';
+import { Container } from '@material-ui/core';
 import TransactionsProvider from './TransactionsProvider';
 import Transactions from './Transactions';
 import HandleBudgetChange from './HandleBudgetChange'
 
-const App = () => {
+function App() {
   return (
     <TransactionsProvider>
       <NumbersProvider>
