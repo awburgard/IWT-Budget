@@ -5,14 +5,20 @@ import * as serviceWorker from './serviceWorker';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { ApolloProvider } from '@apollo/react-hooks';
 
 import theme from './theme';
+import { createApolloClient } from './client'
+
+const client = createApolloClient()
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <App />
-  </ThemeProvider>,
+  <ApolloProvider client={client}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </ApolloProvider>,
   document.querySelector('#root'),
 );
 

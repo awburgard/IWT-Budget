@@ -5,6 +5,7 @@ import { Container } from '@material-ui/core';
 import TransactionsProvider from './TransactionsProvider';
 import Transactions from './Transactions';
 import HandleBudgetChange from './HandleBudgetChange'
+import Users from './test'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Budget />
           <Transactions />
           <HandleBudgetChange />
+          <Users />
         </Container>
       </NumbersProvider>
     </TransactionsProvider>
