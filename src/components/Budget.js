@@ -40,42 +40,42 @@ class Budget extends React.Component {
 
   render() {
     return (
-      <Grid container>
-        <Typography variant='h4' gutterBottom>
-          {this.state.date}
-        </Typography>
-        <Grid container item lg={12}>
-          <Input onChange={this.handleChange('totalIncome')} />
-        </Grid>
-        <Grid container item lg={12}>
-          <MyButton onClick={this.totalIncomeBreakdown}>Submit</MyButton>
-        </Grid>
-        <Grid container item lg={12}>
-          <Typography color='primary' gutterBottom>
-            Total Income: {this.state.totalIncome}
+        <Grid container justify='center' alignContent='center'>
+          <Typography variant='h4' gutterBottom align="right">
+            {this.state.date}
           </Typography>
+          <Grid container item="true" lg={12} justify='center'>
+            <Input onChange={this.handleChange('totalIncome')} />
+          </Grid>
+          <Grid container item="true" lg={12} justify='center'>
+            <MyButton onClick={this.totalIncomeBreakdown}>Submit</MyButton>
+          </Grid>
+          <Grid container item lg={12}>
+            <Typography gutterBottom align="right">
+              Total Income: {this.state.totalIncome}
+            </Typography>
+          </Grid>
+          <Grid container item lg={12}>
+            <Typography gutterBottom align="right">
+              Monthly Fixed Costs: {this.state.monthlyFixedCost}
+            </Typography>
+          </Grid>
+          <Grid container item lg={12}>
+            <Typography gutterBottom align="right">
+              Investments: {this.state.investmentCost}
+            </Typography>
+          </Grid>
+          <Grid container item lg={12}>
+            <Typography gutterBottom align="right">
+              Savings: {this.state.savingsCost}
+            </Typography>
+          </Grid>
+          <Grid container item lg={12}>
+            <Typography gutterBottom align="right">
+              Guilt Free Spending: {this.state.guiltFreeSpending}
+            </Typography>
+          </Grid>
         </Grid>
-        <Grid container item lg={12}>
-          <Typography gutterBottom>
-            Monthly Fixed Costs: {this.state.monthlyFixedCost}
-          </Typography>
-        </Grid>
-        <Grid container item lg={12}>
-          <Typography gutterBottom>
-            Investments: {this.state.investmentCost}
-          </Typography>
-        </Grid>
-        <Grid container item lg={12}>
-          <Typography gutterBottom>
-            Savings: {this.state.savingsCost}
-          </Typography>
-        </Grid>
-        <Grid container item lg={12}>
-          <Typography gutterBottom>
-            Guilt Free Spending: {this.state.guiltFreeSpending}
-          </Typography>
-        </Grid>
-      </Grid>
     )
   }
 }

@@ -1,5 +1,12 @@
 import React from 'react'
-import { Input, Button, List, ListItem } from '@material-ui/core'
+import {
+  Input,
+  Button,
+  List,
+  ListItem,
+  Grid,
+  Typography,
+} from '@material-ui/core'
 
 class Transactions extends React.Component {
   state = {
@@ -33,12 +40,19 @@ class Transactions extends React.Component {
       )
     )
     return (
-      <div>
-        <Input onChange={this.handleChange('cost')} placeholder='cost' />
-        <Input onChange={this.handleChange('place')} placeholder='place' />
-        <Button onClick={this.submitTransaction}>Add</Button>
-        <List>{transactions}</List>
-      </div>
+      <>
+        <Grid>
+          <Typography variant='h5' align='center'>
+            Add Your Purchases Here
+          </Typography>
+        </Grid>
+        <Grid container justify='center'>
+          <Input onChange={this.handleChange('cost')} placeholder='cost' />
+          <Input onChange={this.handleChange('place')} placeholder='place' />
+          <Button onClick={this.submitTransaction}>Add Transaction</Button>
+          <List>{transactions}</List>
+        </Grid>
+      </>
     )
   }
 }
