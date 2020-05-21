@@ -1,16 +1,15 @@
-import React from 'react';
+import React from 'react'
 import Budget from './Budget'
-import NumbersProvider from './NumbersProvider';
-import { Container } from '@material-ui/core';
-import Transactions from './Transactions';
+import { Container } from '@material-ui/core'
+import Transactions from './Transactions'
 
 function App() {
   return (
-        <Container>
-          <Budget />
-          <Transactions />
-        </Container>
-  );
+    <Container>
+      <Budget />
+      <Transactions />
+    </Container>
+  )
 }
 
-export default App;
+export default App
