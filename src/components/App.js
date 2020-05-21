@@ -6,12 +6,10 @@ import Transactions from './Transactions';
 
 function App() {
   return (
-      <NumbersProvider>
         <Container>
           <Budget />
           <Transactions />
         </Container>
-      </NumbersProvider>
   );
 }
 
