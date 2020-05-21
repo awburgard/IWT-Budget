@@ -1,43 +1,44 @@
 import React, { Component } from 'react'
 import { Input, Button, List, ListItem } from '@material-ui/core'
-import { TransactionContext } from './TransactionsContext'
 
 export default class Transactions extends Component {
+  state = {
+    cost: null,
+    place: null,
+    listOfTransactions: [],
+  }
 
-    state = {
-        cost: null,
-        place: null
-    }
+  addTransaction = ({ cost, place }) => {
+    this.setState({
+      listOfTransactions: [...this.state.listOfTransactions, { cost, place }],
+    })
+  }
 
-    handleChange = property => event => {
-        this.setState({
-            [property]: event.target.value
-        });
-    };
+  handleChange = (property) => (event) => {
+    this.setState({
+      [property]: event.target.value,
+    })
+  }
 
-    submitTransaction = (context) => () => {
-        context.addTransaction(this.state)
-    }
+  submitTransaction = () => {
+    this.addTransaction({ cost: this.state.cost, place: this.state.place })
+  }
 
-
-    render() {
-        return (
-            <TransactionContext.Consumer>
-                {(context) => (
-                    <div>
-                        <Input onChange={this.handleChange("cost")} placeholder='cost' />
-                        <Input onChange={this.handleChange("place")} placeholder='place' />
-                        <Button onClick={this.submitTransaction(context)}>Add</Button>
-                        {context.transactions.transactions.map((transaction) =>
-                            <List key={transaction.cost}>
-                                <ListItem>
-                                    {transaction.place}: ${transaction.cost}
-                                </ListItem>
-                            </List>
-                        )}
-                    </div>
-                )}
-            </TransactionContext.Consumer>
-        )
-    }
+  render() {
+    const transactions = this.state.listOfTransactions.map(
+      ({ place, cost }) => (
+        <ListItem>
+          {place} {cost}
+        </ListItem>
+      )
+    )
+    return (
+      <div>
+        <Input onChange={this.handleChange('cost')} placeholder='cost' />
+        <Input onChange={this.handleChange('place')} placeholder='place' />
+        <Button onClick={this.submitTransaction}>Add</Button>
+        <List>{transactions}</List>
+      </div>
+    )
+  }
 }
