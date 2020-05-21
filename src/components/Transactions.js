@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Input, Button, List, ListItem } from '@material-ui/core'
 
-export default class Transactions extends Component {
+class Transactions extends React.Component {
   state = {
     cost: null,
     place: null,
@@ -42,3 +42,5 @@ export default class Transactions extends Component {
     )
   }
 }
+
+export default Transactions
